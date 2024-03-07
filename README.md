@@ -14,6 +14,7 @@ genome build - hg19
 STEPS:
 
 (1) The method relies on an X-skew model generated using 135 females from the GTEX reference consortium. The model is generated using positions within the reference cohort, genes within the reference cohort and also includes a global model which is a random sample of 2000 positions present within the general population. We described these models as 
+
   (a) Position specific model 
   
   (b) gene specific model
