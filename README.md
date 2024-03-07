@@ -9,12 +9,23 @@ Python 2.7.10 or higher
 R-3.6.2
 Samtools
 Bedtools
+genome build - hg19 
 
 STEPS:
 (1) The method relies on an X-skew model generated using 135 females from the GTEX reference consortium. The model is generated using positions within the reference cohort, genes within the reference cohort and also includes a global model which is a random sample of 2000 positions present within the general population. We described these models as 
   (a) Position specific model 
   (b) gene specific model
   (c) Global model 
-  These models exist as tab delimited files located within the 
+  These models exist as tab delimited files located within the GTEX_PARAMETER_ESTIMATES directory. These have been generated using 135 GTEX reference females (v7) on hg19. 
+
+(2) Data Pre-processing steps :
+     (1) Generation of 
+
+
+     (2) RNA BAM 
+
+     
+
+     
 
 
