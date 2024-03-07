@@ -20,6 +20,7 @@ STEPS:
   These models exist as tab delimited files located within the GTEX_PARAMETER_ESTIMATES directory. These have been generated using 135 GTEX reference females (v7) on hg19. 
 
 (2) Data Pre-processing steps
+
     (a) Generation of 
 
 
