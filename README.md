@@ -21,7 +21,8 @@ STEPS:
   
   (c) Global model 
   
-  These models exist as tab delimited files located within the GTEX_PARAMETER_ESTIMATES directory. These have been generated using 135 GTEX reference females (v7) on hg19. 
+  These models have been pre-generated for users and exist as tab delimited files located within the GTEX_PARAMETER_ESTIMATES directory. The models were generated using 135 GTEX reference females (v7) using human genome reference build hg19. 
+  For a detailed user guide on generation a reference model, refer to the online wiki 
 
 (2) Data Pre-processing steps
 
