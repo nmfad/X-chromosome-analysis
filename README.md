@@ -26,7 +26,8 @@ STEPS:
 
 (2) Data Pre-processing steps
 
-    (a) Generation of 
+    (a) Generation of variant calls from DNA - Users may use any DNA aligner and variant caller of choice. We have used an updated version of the TREAT worfklow [22088845]
+         (1) Subset the VCF files to include calls that are genotyped as HET, 
 
 
     (b) RNA BAM 
