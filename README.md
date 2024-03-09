@@ -15,23 +15,31 @@ STEPS:
 
 (1) The method relies on an X-skew model generated using 135 females from the GTEX reference consortium. The model is generated using positions within the reference cohort, genes within the reference cohort and also includes a global model which is a random sample of 2000 positions present within the general population. We described these models as 
 
-  (a) Position specific model 
+  (a) Position specific model - GTEX_PARAMETER_ESTIMATES/BB_params_position_and_global_specific_model_chrX_exons.txt
   
-  (b) gene specific model
+  (b) gene specific model - GTEX_PARAMETER_ESTIMATES/BB_params_gene_specific_model_chrX_exons.txt
   
-  (c) Global model 
+  (c) Global model - Same file as position specific model ; GTEX_PARAMETER_ESTIMATES/BB_params_position_and_global_specific_model_chrX_exons.txt
   
-  These models have been pre-generated for users and exist as tab delimited files located within the GTEX_PARAMETER_ESTIMATES directory. The models were generated using 135 GTEX reference females (v7) using human genome reference build hg19. 
-  For a detailed user guide on generation a reference model, refer to the online wiki 
+  These models have been pre-generated for users and exist as tab delimited files located within the GTEX_PARAMETER_ESTIMATES directory. They need not be regenerated. The models were generated using 135 GTEX reference females (v7) using human genome reference build hg19. If users would like to generate their own reference models using their choice of reference cohort ; please see user guide on wiki page for details on generation a reference model. The online wiki page provides step by step examples for creation of models using the GTEx reference cohorts but can be applied to any cohorts. 
 
-(2) Data Pre-processing steps
+(2) Data Pre-processing steps for samples undergoing evaluation for X-skew testing. 
 
-    (a) Generation of variant calls from DNA - Users may use any DNA aligner and variant caller of choice. We have used an updated version of the TREAT worfklow [22088845]
-         (1) Subset the VCF files to include calls that are genotyped as HET, 
+    (a) Generation of variant calls from DNA - Users may use any DNA aligner and variant caller of choice. We have used an updated version of the TREAT worfklow [22088845]. 
+         (1) Next, Subset the VCF files to include calls that lie on the X chromosome, genotyped as HET (variants genotyped as 1/0 or 0/1 within the GT field) and are "PASS" in the "QUAL" field. Users can do this either using GATK SelectVariants or a utility script for this has been provided within the SUBSET_VCF directory - extract_hets.py
+         Usage : python extract_hets.py <input file> <sample name> <output directory> 
+
+         (2) The VCF file should exclude PAR regions. These regions are difficult to genotype owing to high homology and thus are excluded from X-skew analysis. A bedfile for PAR regions corresponding to human genome reference build hg19 is provided within the REF_TRACKS directory (XCHR_MINUS_PAR.bed) . Filter the VCF file to exclude these regions. Users can do this using a tool of thier choice such as Bedtools or a utility script is provided within the SUBSET_VCF directory - filter_vcf_PAR_region.py
+         Usage : python filter_vcf_PAR_region.py <vcf file from step (1)> <sample name> <output directory>
+
+         (3) The VCF file should be filtered to a depth of (DP>=10) and genotype quality (GQ > 20). Users can use any filtering tool of their choice such as GATK SelectVariants to achieve this or a utility script is provided for the same within the SUBSET_VCF directory - DP_GQ_filter.py
+          Usage: python DP_GQ_filter.py <input vcf> <sample name> <output directory> 
+
+         (4) 
 
 
     (b) RNA BAM 
-
+filter_vcf_PAR_region.py
      
 
      
