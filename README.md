@@ -24,7 +24,7 @@ STEPS:
   
   (b) gene specific model - GTEX_PARAMETER_ESTIMATES/BB_params_gene_specific_model_chrX_exons.txt
   
-  (c) Global model - Same file as position specific model ; GTEX_PARAMETER_ESTIMATES/BB_params_position_and_global_specific_model_chrX_exons.txt
+  (c) Global model -  GTEX_PARAMETER_ESTIMATES/BB_params_position_and_global_specific_model_chrX_exons.txt (Same file as position specific model file) 
   
   These models have been pre-generated for users and exist as tab delimited files located within the GTEX_PARAMETER_ESTIMATES directory. They need not be regenerated. The models were generated using 135 GTEX reference females (v7) using human genome reference build hg19. If users would like to generate their own reference models using their choice of reference cohort ; please see user guide on wiki page for details on generation a reference model. The online wiki page provides step by step examples for creation of models using the GTEx reference cohorts but can be applied to any cohorts. 
 
@@ -44,7 +44,7 @@ STEPS:
 
 
     (b) RNA BAM 
-filter_vcf_PAR_region.py
+
      
 
      
