@@ -6,9 +6,13 @@ X-chromosome inactivation (XCI) is an epigenetic process that occurs during earl
 
 REQUIREMENTS:
 Python 2.7.10 or higher
+
 R-3.6.2
+
 Samtools
+
 Bedtools
+
 genome build - hg19 
 
 STEPS:
