@@ -40,7 +40,7 @@ STEPS:
          (3) The VCF file should be filtered to a depth of (DP>=10) and genotype quality (GQ > 20). Users can use any filtering tool of their choice such as GATK SelectVariants to achieve this or a utility script is provided for the same within the SUBSET_VCF directory - DP_GQ_filter.py
           Usage: python DP_GQ_filter.py <input vcf> <sample name> <output directory> 
 
-         (4) 
+         (4) Subset the filtered file from (1) , (2) and (3) to only exon regions on the X chromosome. 
 
 
     (b) RNA BAM 
