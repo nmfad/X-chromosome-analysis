@@ -40,7 +40,10 @@ STEPS:
          (3) The VCF file should be filtered to a depth of (DP>=10) and genotype quality (GQ > 20). Users can use any filtering tool of their choice such as GATK SelectVariants to achieve this or a utility script is provided for the same within the SUBSET_VCF directory - DP_GQ_filter.py
           Usage: python DP_GQ_filter.py <input vcf> <sample name> <output directory> 
 
-         (4) Subset the filtered file from (1) , (2) and (3) to only exon/coding regions on the X chromosome. A bedfile for all exon only regions on the X chromosome is provided within the REF_TRACKS directory
+         (4) Subset the filtered file from (1) , (2) and (3) to only exon/coding regions on the X chromosome. A bedfile for all exon only regions on the X chromosome is provided within the REF_TRACKS directory REF_TRACKS/XCHR_MINUS_PAR.bed
+
+         (5) Using the VCF file generated in step 4 , prepare a bedfile that will be used for generating mpileups using RNA bams. Ensure the bedfile in a valid format from the VCF file such as
+            chrX  pos-1  pos
 
 
     (b) RNA BAM 
