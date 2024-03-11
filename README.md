@@ -108,7 +108,7 @@ STEPS:
         
 	14. Gene
 
-(4) Preferential scoring of P-value for analysis of X-skew - In this step, we preferentially select p-values generated in step 3. If a p-value is available at the position, gene and global model, we select the pvalue assigned using the position specific model towards X-skew calculations. If a p-value is available using gene and global model, we select the p-value assigned using the gene model towards X-ksew calculation. Finally if neither the position or gene specific model associated p-value is available, the p-value generated using the global model is used towards x-skew calculation. This step is achieved using the script 
+(4) Preferential scoring of P-value for analysis of X-skew - In this step, we preferentially select p-values generated in step 3. For a given position, if a p-value is available for the position, gene and global model, we select the pvalue assigned using the position specific model towards X-skew calculation. If a p-value is available using gene and global model, we select the p-value assigned using the gene model towards X-ksew calculation. Finally if neither the position or gene specific model associated p-value is available, the p-value generated using the global model is used towards x-skew calculation. This step is achieved using the script 
 
 
 
