@@ -22,15 +22,17 @@ Download using git clone <url> or download zip file and unzip contents.
 
 STEPS:
 
-(1) The method relies on an X-skew model generated using 135 females from the GTEX reference consortium. The model is generated using positions within the reference cohort, genes within the reference cohort and also includes a global model which is a random sample of 2000 positions present within the general population. These models have been pre-generated for users and exist as tab delimited files located within the GTEX_PARAMETER_ESTIMATES directory. They need not be regenerated. The models were generated using 135 GTEX reference females (v7) using human genome reference build hg19. We described these models as follows and are located within the GTEX_PARAMETER_ESTIMATES directory
+(1) Generation of reference models using the GTEx cohort
 
-  (a) Position specific model - GTEX_PARAMETER_ESTIMATES/BB_params_position_and_global_specific_model_chrX_exons.txt
+	The method relies on an X-skew model generated using 135 females from the GTEX reference consortium. The model is generated using positions within the reference cohort, genes within the reference cohort and also includes a global model which is a random sample of 2000 positions present within the general population. These models have been pre-generated for users and exist as tab delimited files located within the GTEX_PARAMETER_ESTIMATES directory. They need not be regenerated. The models were generated using 135 GTEX reference females (v7) using human genome reference build hg19. We described these models as follows and are located within the GTEX_PARAMETER_ESTIMATES directory
+
+  	(a) Position specific model - GTEX_PARAMETER_ESTIMATES/BB_params_position_and_global_specific_model_chrX_exons.txt
   
-  (b) gene specific model - GTEX_PARAMETER_ESTIMATES/BB_params_gene_specific_model_chrX_exons.txt
+  	(b) gene specific model - GTEX_PARAMETER_ESTIMATES/BB_params_gene_specific_model_chrX_exons.txt
   
-  (c) Global model -  GTEX_PARAMETER_ESTIMATES/BB_params_position_and_global_specific_model_chrX_exons.txt (Same file as position specific model file) 
+  	(c) Global model -  GTEX_PARAMETER_ESTIMATES/BB_params_position_and_global_specific_model_chrX_exons.txt (Same file as position specific model file) 
   
-   If users would like to generate their own reference models using their choice of reference cohort ; please see user guide on wiki page for details on generation a reference model. The online wiki page provides step by step examples for creation of models using the GTEx reference cohorts but can be applied to any cohorts. 
+   	If users would like to generate their own reference models using their choice of reference cohort ; please see user guide on wiki page for details on generation a reference model. The online wiki page provides step by step examples for creation of models using the GTEx reference cohorts but can be applied to any cohorts. 
 
 (2) Data Pre-processing steps for samples undergoing evaluation for X-skew testing. 
 
