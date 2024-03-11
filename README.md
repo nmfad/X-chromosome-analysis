@@ -79,35 +79,40 @@ STEPS:
         Output: <sampleID>_chrX_p_values.txt
         
 	Column definitions
-	POS - position queried from the input file
+ 
+	1. POS - position queried from the input file
         
-	MuHat_Pos - parameter estimate 1 for the position from the GTEX reference cohort
+	2. MuHat_Pos - parameter estimate 1 for the position from the GTEX reference cohort
         
-	SigmaHat_Pos - parameter estimate 2 for the position from the GTEX reference cohort 
+	3. SigmaHat_Pos - parameter estimate 2 for the position from the GTEX reference cohort 
         
-	Pvalue_pos - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort 
+	4. Pvalue_pos - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort 
         
-	Direction_pos - Direction of the allelic bias observed (increase - allelic bias observed is in the direction of the alternate allele)
+	5. Direction_pos - Direction of the allelic bias observed (increase - allelic bias observed is in the direction of the alternate allele)
         
-	Muhat_Gene - parameter estimate 1 for the gene being queried from the GTEX reference cohort 
+	6. Muhat_Gene - parameter estimate 1 for the gene being queried from the GTEX reference cohort 
         
-	SigmaHat_Gene - paramerter estimate 2 for the gene being queried from the GTEX reference cohort
+	7. SigmaHat_Gene - paramerter estimate 2 for the gene being queried from the GTEX reference cohort
         
-	Pvalue_Gene - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort for the gene being queried 
+	8. Pvalue_Gene - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort for the gene being queried 
         
-	Direction_Gene - Direction of the allelic bias observed (increase - allelic bias observed is in the direction of the alternate allele)
+	9. Direction_Gene - Direction of the allelic bias observed (increase - allelic bias observed is in the direction of the alternate allele)
         
-	Global_pvalue - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort  
+	10. Global_pvalue - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort  
         
-	Direction_Global
+	11. Direction_Global
         
-	Ref_Count
+	12. Ref_Count
         
-	Alt_Count
+	13. Alt_Count
         
-	Gene
+	14. Gene
 
-(4) Calculation of X-skew 
+(4) Preferential scoring of P-value for analysis of X-skew - In this step, we preferentially select p-values generated in step 3. If a p-value is available at the position, gene and global model, we select the pvalue assigned using the position specific model towards X-skew calculations. If a p-value is available using gene and global model, we select the p-value assigned using the gene model towards X-ksew calculation. Finally if neither the position or gene specific model associated p-value is available, the p-value generated using the global model is used towards x-skew calculation. This step is achieved using the script 
+
+
+
+Calculation of X-skew 
      
      Using the file generated in step (3) above <sampleID>_chrX_pvalues.txt
      
@@ -115,7 +120,9 @@ STEPS:
      
      (b) Count the total number of positions at DP >=10 and those that are annotated as "SIG" meaning they had significant p-values 
      
-     (c) Calculate the percentage of significantly skewed positions by doing ((b)/(a))*100.0 
+     (c) Calculate the percentage of significantly skewed positions by doing (b/a)*100.0 or [count of total number of significant positions at DP>=10/total number of positions analyzed at DP>=10]
+
+	  Note: DP = sum of the 
      
      (d) If the percentage of significantly skewed positions is greater than 12%, then the sample is classified as a skewed sample or else it is classified as a random sample. 
        
