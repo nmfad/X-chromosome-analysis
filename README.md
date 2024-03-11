@@ -108,21 +108,37 @@ STEPS:
         
 	14. Gene
 
-(4) Preferential scoring of P-value for analysis of X-skew - In this step, we preferentially select p-values generated in step 3. For a given position, if a p-value is available for the position, gene and global model, we select the pvalue assigned using the position specific model towards X-skew calculation. If a p-value is available using gene and global model, we select the p-value assigned using the gene model towards X-ksew calculation. Finally if neither the position or gene specific model associated p-value is available, the p-value generated using the global model is used towards x-skew calculation. This step is achieved using the script 
+(4) Preferential scoring of P-value for analysis of X-skew - In this step, we preferentially select p-values generated in step 3. For a given position, if a p-value is available for the position, gene and global model, we select the pvalue assigned using the position specific model towards X-skew calculation. If a p-value is available using gene and global model, we select the p-value assigned using the gene model towards X-ksew calculation. Finally if neither the position or gene specific model associated p-value is available, the p-value generated using the global model is used towards x-skew calculation. This step is achieved using the script preferential_scoring_pvalues.py , it takes as input , the p-value file generated using step 3 above, the sample name and the path to the output directory
 
+	Usage: python preferential_scoring_pvalues.py <sampleID_chrX_p_values.txt> <sampleID> <output directory>
 
+  	Output: sampleID_pvalues_selected.txt
 
-Calculation of X-skew 
+ 	Definition of columns:
+
+  	Column 1: position in the format (chrX:position)
+
+   	Column 2: preferenatially selected P-value 
+
+    	Column 3: Gene, Exon, transcript
+
+     	Column 4: count of reference allele in RNA-seq data
+
+      	Column 5: count of alternate allele in RNA-seq data 
+
+	Column 6: SampleID
+
+ 	Column 7: Annotation for significance (Significant = "SIG", Insignificant = "INSIG") 
+
+(5) Calculation of X-skew 
      
-     Using the file generated in step (3) above <sampleID>_chrX_pvalues.txt
+     Using the file generated in step (4) above sampleID_pvalues_selected.txt
      
-     (a) Count the total number of positions at DP >= 10 
+     (a) Count the total number of positions at DP >= 10 (Sum of columns 4 and columns 5, that is the sum of the counts of reference and alternate alleles)  
      
-     (b) Count the total number of positions at DP >=10 and those that are annotated as "SIG" meaning they had significant p-values 
+     (b) Count the total number of positions at DP >=10 (Sum of columns 4 and columns 5, that is the sum of the counts of reference and alternate alleles) and those that are annotated as "SIG" meaning they had significant p-values 
      
      (c) Calculate the percentage of significantly skewed positions by doing (b/a)*100.0 or [count of total number of significant positions at DP>=10/total number of positions analyzed at DP>=10]
-
-	  Note: DP = sum of the 
      
      (d) If the percentage of significantly skewed positions is greater than 12%, then the sample is classified as a skewed sample or else it is classified as a random sample. 
        
