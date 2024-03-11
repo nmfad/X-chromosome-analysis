@@ -14,7 +14,11 @@ REQUIREMENTS:
 
 4. Bedtools
 
-5. genome build - hg19 
+5. genome build - hg19
+
+DOWNLOAD:
+
+Download using git clone <url> or download zip file and unzip contents. 
 
 STEPS:
 
