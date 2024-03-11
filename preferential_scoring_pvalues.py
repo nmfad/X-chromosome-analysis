@@ -15,7 +15,7 @@ sample=sys.argv[2]
 
 output_dir=sys.argv[3]
 
-myfile=csv.writer(open(sys.argv[3]+"/"+sample+"_pvalues.txt","a"),delimiter="\t")
+myfile=csv.writer(open(sys.argv[3]+"/"+sample+"_pvalues_selected.txt","a"),delimiter="\t")
 #myfile.writerow(header)
 
 sig_list=[]
