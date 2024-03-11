@@ -73,29 +73,50 @@ STEPS:
 	      GENE - Gene in which the position lies. If the position lies within overlapping genes, you can include both the genes separated by a comma. 
 
 (3) Outlier based analysis - The CVAC file generated using DNA and RNA sequencing data in step (b)(3) is then used to query the reference model or GTEX model using the script calculate_pvalues_3_models.R 
-	Usage: Rscript calculate_pvalues_3_models.R -f <samplename_RNA_BAM_VAF_FOR_DNA_HET_sorted_gene.txt> -s <samplID> -o <output directory>
-  	Output: <sampleID>_chrX_p_values.txt
-        Column definition
+	
+        Usage: Rscript calculate_pvalues_3_models.R -f <samplename_RNA_BAM_VAF_FOR_DNA_HET_sorted_gene.txt> -s <samplID> -o <output directory>
+  	
+        Output: <sampleID>_chrX_p_values.txt
+        
+	Column definitions
 	POS - position queried from the input file
-        MuHat_Pos - parameter estimate 1 for the position from the GTEX reference cohort
-        SigmaHat_Pos - parameter estimate 2 for the position from the GTEX reference cohort 
-        Pvalue_pos - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort 
-        Direction_pos - Direction of the allelic bias observed (increase - allelic bias observed is in the direction of the alternate allele)
-        Muhat_Gene - parameter estimate 1 for the gene being queried from the GTEX reference cohort 
-        SigmaHat_Gene - paramerter estimate 2 for the gene being queried from the GTEX reference cohort
-        Pvalue_Gene - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort for the gene being queried 
-        Direction_Gene - Direction of the allelic bias observed (increase - allelic bias observed is in the direction of the alternate allele)
-        Global_pvalue - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort  
-        Direction_Global
-        Ref_Count
-        Alt_Count
-        Gene
+        
+	MuHat_Pos - parameter estimate 1 for the position from the GTEX reference cohort
+        
+	SigmaHat_Pos - parameter estimate 2 for the position from the GTEX reference cohort 
+        
+	Pvalue_pos - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort 
+        
+	Direction_pos - Direction of the allelic bias observed (increase - allelic bias observed is in the direction of the alternate allele)
+        
+	Muhat_Gene - parameter estimate 1 for the gene being queried from the GTEX reference cohort 
+        
+	SigmaHat_Gene - paramerter estimate 2 for the gene being queried from the GTEX reference cohort
+        
+	Pvalue_Gene - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort for the gene being queried 
+        
+	Direction_Gene - Direction of the allelic bias observed (increase - allelic bias observed is in the direction of the alternate allele)
+        
+	Global_pvalue - Probability (P-value) based on parameter estimates (1 and 2) from the GTEX reference cohort  
+        
+	Direction_Global
+        
+	Ref_Count
+        
+	Alt_Count
+        
+	Gene
 
 (4) Calculation of X-skew 
+     
      Using the file generated in step (3) above <sampleID>_chrX_pvalues.txt
+     
      (a) Count the total number of positions at DP >= 10 
+     
      (b) Count the total number of positions at DP >=10 and those that are annotated as "SIG" meaning they had significant p-values 
+     
      (c) Calculate the percentage of significantly skewed positions by doing ((b)/(a))*100.0 
+     
      (d) If the percentage of significantly skewed positions is greater than 12%, then the sample is classified as a skewed sample or else it is classified as a random sample. 
        
 
