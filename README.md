@@ -151,7 +151,7 @@ STEPS:
 
 Contact:
 
-Please contact Numrah Fadra (fadra.numrah@mayo.edu) with any questions/issues with using the scripts or input/output file formats. You can also start a communication thread using the issues tab on github and we will respond as soon as possible. 
+Please contact Numrah Fadra (fadra.numrah@mayo.edu) with any questions/issues on using the scripts or input/output file formats. You can also start a communication thread using the issues tab on github and we will respond as soon as possible. 
 
 
     
