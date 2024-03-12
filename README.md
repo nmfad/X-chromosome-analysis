@@ -149,7 +149,9 @@ STEPS:
      (d) If the percentage of significantly skewed positions is greater than 12%, then the sample is classified as a skewed sample or else it is classified as a random sample. 
        
 
+Contact:
 
+Please contact Numrah Fadra (fadra.numrah@mayo.edu) with any questions/issues with using the scripts or input/output file formats. 
 
 
     
