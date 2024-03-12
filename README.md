@@ -146,12 +146,12 @@ STEPS:
      
      (c) Calculate the percentage of significantly skewed positions by doing (b/a)*100.0 or [count of total number of significant positions at DP>=10/total number of positions analyzed at DP>=10]
      
-     (d) If the percentage of significantly skewed positions is greater than 12%, then the sample is classified as a skewed sample or else it is classified as a random sample. 
+     (d) If the percentage of significantly skewed positions is greater than 12%, then the sample is classified as a skewed sample or else it can inferred as a sample undergoing random XCI. The user can then annotate as per the threshold percentage, this study uses a percentage of 12%. Consider adjusting the threshold for your dataset when analyzed against the GTEx reference cohort if the library prepation methods used are different from those used for GTEx samples (Note: GTEx samples use the Truseq poly(A) protocol for RNA based library preps). 
        
 
 Contact:
 
-Please contact Numrah Fadra (fadra.numrah@mayo.edu) with any questions/issues with using the scripts or input/output file formats. 
+Please contact Numrah Fadra (fadra.numrah@mayo.edu) with any questions/issues with using the scripts or input/output file formats. You can also start a communication thread using the issues tab on github and we will respond as soon as possible. 
 
 
     
