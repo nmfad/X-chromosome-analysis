@@ -18,7 +18,7 @@ REQUIREMENTS:
 
 DOWNLOAD:
 
-Download using git clone <url> or download zip file and unzip contents. 
+Download using git clone <url> or download the scripts using the zipped file and unzip contents. 
 
 STEPS:
 
